@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     rm -f app.jar
-                    cp /root/.jenkins/workspace/multi-branch_Feature/target/*.jar app.jar
+                    cp /root/.jenkins/workspace/multi-branch_master/target/*.jar app.jar
                 '''
             }
         }
