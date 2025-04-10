@@ -12,7 +12,7 @@ pipeline {
 
         stage('Git Cloning') {
             steps {
-                git branch: 'main', url: 'https://github.com/wolf3766/java_application.git'
+                git branch: 'main', url: 'https://github.com/Abhiramikannan/spring-boot-hello-world.git'
             }
         }
 
