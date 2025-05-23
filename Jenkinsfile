@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     rm -f app.jar
-                    /root/.jenkins/workspace/springboot-multibranch_master/target/*.jar app.jar
+                    cp /root/.jenkins/workspace/springboot-multibranch_master/target/*.jar app.jar
                 '''
             }
         }
