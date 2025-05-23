@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "abhiramikannan/spring-boot-hello-world"
+        IMAGE_NAME = "abhiramikannan/java-image"
         TAG = "latest"
     }
 
@@ -21,16 +21,7 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image to Docker Hub') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PAT')]) {
-                    sh '''
-                        echo "$DOCKER_PAT" | docker login -u "$DOCKER_USER" --password-stdin
-                        docker push $IMAGE_NAME:$TAG
-                    '''
-                }
-            }
-        }
+       
 
         stage('Deploy to Kubernetes') {
             steps {
