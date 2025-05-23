@@ -5,7 +5,7 @@ pipeline {
     environment {
         IMAGE_NAME = "abhiramikannan/javaimage"
         TAG = "latest"
-        config_docker_credentials_id = "1"
+        config_docker_credentials_id = "2"
     }
 
     stages {
