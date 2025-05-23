@@ -12,6 +12,11 @@ pipeline {
                 git 'https://github.com/Abhiramikannan/spring-boot-hello-world.git'
             }
         }
+        stage('mvn') {
+            steps {
+                sh 'apt update -y && mvn clean install'
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
